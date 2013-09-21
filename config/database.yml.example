@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: crackle_development
+  pool: 5
+  username: crackle
+  password:
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: crackle_test
+  pool: 5
+  username: crackle
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: crackle_production
+  pool: 5
+  username: crackle
+  password:
+
+cucumber:
+  <<: *test
