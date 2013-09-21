@@ -1,0 +1,7 @@
+- if @users
+  %h2 Registered users
+  %ul.list-group
+    - @users.each do |user|
+      %li.list-group-item= user.username
+- else
+  %h2 No users yet

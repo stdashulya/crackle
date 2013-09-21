@@ -1,0 +1,17 @@
+.well
+  %h2 Resend confirmation instructions
+
+  = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, role: :form }) do |f|
+    - if resource.errors.any?
+      .alert.alert-danger.alert-dismissable
+        %button.close{ type: "button", "data-dismiss" => "alert", "aria-hidden" => :true} &times;
+        = devise_error_messages!
+    = f.hidden_field :reset_password_token
+
+    .form-group
+      = f.label :email
+      = f.password_field :email, autofocus: true, class: "form-control"
+
+    = f.submit "Resend confirmation instructions", class: "btn btn-primary"
+
+  = render "devise/shared/links"
